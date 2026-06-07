@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading... | Portfolio 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loading.css">
+</head>
+<body>
+
+    <div class="loading-wrapper">
+        
+        <div class="loader-container">
+            
+            <img src="images/spot pink.png" alt="Pink Splatter Base" class="splatter-base">
+
+            <img src="images/spot pink.png" alt="Pink Splatter Fill" class="splatter-fill" id="splatterFill">
+
+            <div class="loading-percentage glitch-text" id="percentageText" data-text="0%">0%</div>
+
+        </div>
+
+        <div class="typing-container">
+            <h1 class="loading-text" id="loadingText" data-text="LOADING...">LOADING...</h1>
+        </div>
+
+    </div>
+
+    <script>
+        const percentageText = document.getElementById('percentageText');
+        const splatterFill = document.getElementById('splatterFill');
+        const loadingText = document.getElementById('loadingText');
+        let count = 0;
+
+        const counterInterval = setInterval(() => {
+            count++;
+            
+            // تحديث أرقام النسبة المئوية وتحديث جليتش النص
+            percentageText.innerText = count + '%';
+            percentageText.setAttribute('data-text', count + '%');
+            
+            // حساب نسبة الصعود للبقعة
+            let fillProgress = 100 - count;
+            splatterFill.style.clipPath = `inset(${fillProgress}% 0% 0% 0%)`;
+
+            // أول ما يوصل 100% يغير الكلمة لـ DONE ويوقف الأنميشن القديم
+            if (count >= 100) {
+                clearInterval(counterInterval);
+                
+                loadingText.innerText = 'DONE';
+                loadingText.setAttribute('data-text', 'DONE');
+                loadingText.classList.add('is-done'); // كلاس يوقف الـ Typing ويخلي الكلمة ثابتة
+            }
+        }, 40);
+    </script>
+</body>
+</html>

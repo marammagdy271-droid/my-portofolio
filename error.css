@@ -1,0 +1,170 @@
+/* 1. تصفير الهوامش والـ Reset الأساسي */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000; /* خلفية سوداء داكنة تماماً */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. الحاوية المركزية */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* ==========================================
+   تكنيك الـ Glitch (بينك + بنفسجي نيون)
+   ========================================= */
+
+/* رقم 404 العملاق */
+.glitch-code {
+    font-family: 'Knewave', system-ui;
+    font-size: 13rem;
+    font-weight: bold;
+    color: #ffffff; /* اللون الأساسي أبيض */
+    position: relative;
+    line-height: 1;
+    letter-spacing: 5px;
+    /* الظلال ميكس بين البينك والبنفسجي النيون */
+    text-shadow: 0.05em 0 0 #FF017F, -0.025em -0.05em 0 #9B00FE, 0.025em 0.05em 0 #FF017F;
+    animation: glitch 1s linear infinite;
+}
+
+/* تأثير الطبقات الوهمية برة وجوة النص */
+.glitch-code::before,
+.glitch-code::after,
+.glitch-sub-title::before,
+.glitch-sub-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000; /* لحجب الطبقة اللي تحتها عند الاهتزاز */
+}
+
+/* ضبط طبقة اللون البنفسجي النيون (اليمين) */
+.glitch-code::before {
+    animation: glitch-anim 0.4s cubic-bezier(.25, .46, .45, .94) both infinite;
+    color: #9B00FE;
+    z-index: -1;
+}
+
+/* ضبط طبقة اللون البينك الفاقع (الشمال) */
+.glitch-code::after {
+    animation: glitch-anim2 0.4s cubic-bezier(.25, .46, .45, .94) both infinite;
+    color: #FF017F;
+    z-index: -2;
+}
+
+/* 3. تنسيق النصوص العلوية والسفلية (ERROR! & PAGE NOT FOUND) */
+.glitch-sub-title {
+    font-family: Arial, sans-serif; 
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 6px;
+    position: relative;
+    text-transform: uppercase;
+    animation: glitch 1.5s linear infinite;
+}
+
+.glitch-sub-title::before {
+    animation: glitch-anim 0.6s cubic-bezier(.25, .46, .45, .94) both infinite;
+    color: #9B00FE; /* قلبناها بنفسجي نيون */
+    z-index: -1;
+}
+
+.glitch-sub-title::after {
+    animation: glitch-anim2 0.6s cubic-bezier(.25, .46, .45, .94) both infinite;
+    color: #FF017F; /* بينك فاقع */
+    z-index: -2;
+}
+
+/* 4. زرار العودة الذكي المتناسق مع التصميم */
+.back-home-btn {
+    margin-top: 30px;
+    font-family: 'Knewave', system-ui;
+    font-size: 1.4rem;
+    color: #ffffff;
+    background-color: #7B1FA2; 
+    padding: 14px 40px;
+    border-radius: 35px;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(123, 31, 162, 0.4);
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    transform: scale(1.05) rotate(-1deg);
+    background-color: #9B00FE;
+    box-shadow: 0 0 20px #9B00FE, 0 0 40px #9B00FE;
+}
+
+/* ==========================================
+   الـ Keyframes لعمل الاهتزاز بالرؤية الجديدة
+   ========================================== */
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #FF017F, -0.05em -0.025em 0 #9B00FE;
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 #FF017F, 0.025em 0.025em 0 #9B00FE;
+    }
+    49% {
+        text-shadow: 0.05em 0 0 #FF017F, -0.05em -0.025em 0 #9B00FE;
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 #FF017F, 0.05em 0 0 #9B00FE;
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 #FF017F, 0.05em 0 0 #9B00FE;
+    }
+    100% {
+        text-shadow: -0.025em 0 0 #FF017F, -0.025em -0.025em 0 #9B00FE;
+    }
+}
+
+/* تأثير التقطيع العشوائي الأفقي للطبقة الأولى */
+@keyframes glitch-anim {
+    0% { clip: rect(30px, 9999px, 10px, 0); }
+    10% { clip: rect(85px, 9999px, 5px, 0); }
+    20% { clip: rect(12px, 9999px, 85px, 0); }
+    30% { clip: rect(45px, 9999px, 60px, 0); }
+    40% { clip: rect(90px, 9999px, 30px, 0); }
+    50% { clip: rect(5px, 9999px, 95px, 0); }
+    60% { clip: rect(65px, 9999px, 40px, 0); }
+    70% { clip: rect(15px, 9999px, 75px, 0); }
+    80% { clip: rect(80px, 9999px, 20px, 0); }
+    90% { clip: rect(35px, 9999px, 55px, 0); }
+    100% { clip: rect(50px, 9999px, 15px, 0); }
+}
+
+/* تأثير التقطيع العشوائي الأفقي للطبقة الثانية */
+@keyframes glitch-anim2 {
+    0% { clip: rect(70px, 9999px, 40px, 0); }
+    10% { clip: rect(15px, 9999px, 95px, 0); }
+    20% { clip: rect(55px, 9999px, 10px, 0); }
+    30% { clip: rect(85px, 9999px, 65px, 0); }
+    40% { clip: rect(30px, 9999px, 80px, 0); }
+    50% { clip: rect(95px, 9999px, 5px, 0); }
+    60% { clip: rect(20px, 9999px, 50px, 0); }
+    70% { clip: rect(60px, 9999px, 25px, 0); }
+    80% { clip: rect(40px, 9999px, 90px, 0); }
+    90% { clip: rect(75px, 9999px, 15px, 0); }
+    100% { clip: rect(10px, 9999px, 60px, 0); }
+}

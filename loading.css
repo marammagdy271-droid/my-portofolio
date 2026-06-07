@@ -1,0 +1,183 @@
+/* ==========================================
+   1. تصفير الهوامش والـ Reset الأساسي
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: oklch(0% 0 0); /* الخلفية السوداء الفخمة للـ Portfolio */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* الحاوية الرأسية لتنسيق المسافة بين البقعة والنص السفلي */
+.loading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ==========================================
+   2. تكنيك الـ Grid لتثبيت الطبقات فوق بعضها بدقة
+   ========================================== */
+.loader-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: grid;
+    place-items: center; 
+}
+
+/* إجبار البقع والنسبة المئوية على البدء من نفس نقطة الارتكاز */
+.splatter-base,
+.splatter-fill,
+.loading-percentage {
+    grid-area: 1 / 1; 
+}
+
+/* البقعة الخلفية الباهتة (شكل الطرطشة الأصلي الفخم) */
+.splatter-base {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+/* البقعة الأمامية الفاقعة اللي بتتملي */
+.splatter-fill {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 0 15px #FF017F); /* التوهج البينك النيون */
+    clip-path: inset(100% 0% 0% 0%); /* تبدأ مختفية من تحت */
+    transition: clip-path 0.04s linear;
+}
+
+/* ==========================================
+   3. التنسيق المعدل للنسبة المئوية (الوزن البصري الصح)
+   ========================================== */
+.loading-percentage {
+    font-family: 'Knewave', system-ui;
+    font-size: 2.2rem; 
+    color: #ffffff;
+    z-index: 3; 
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+    
+    margin-top: -15px;    
+    margin-left: 10px;    
+    transform: rotate(-5deg); 
+}
+
+/* ==========================================
+   4. سيستم الـ Typing الاحترافي لكلمة LOADING...
+   ========================================== */
+.typing-container {
+    display: inline-block;
+    position: relative;
+}
+
+.loading-text {
+    font-family: 'Knewave', system-ui;
+    font-size: 2.2rem;
+    color: #ffffff;
+    letter-spacing: 6px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    border-right: 4px solid #FF017F; /* مؤشر الكتابة الوامض (Cursor) */
+    width: 0; 
+    position: relative;
+    
+    /* أنيميشن الكتابة (10 خطوات للـ LOADING...) + أنيميشن وميض المؤشر */
+    animation: 
+        typing 3s steps(10) infinite,
+        blinkCursor 0.5s step-end infinite alternate,
+        textGlitch 1s linear infinite; 
+}
+
+/* الكلاس السحري: يتفعل بالـ JS أول ما يوصل 100% يخلي كلمة DONE تظهر كاملة وتثبت */
+.loading-text.is-done {
+    width: 100% !important; /* إجبار الكلمة تظهر كاملة */
+    border-right: none; /* إخفاء مؤشر الكتابة العصبي عشان تظهر ثابتة وجميلة */
+    animation: textGlitch 1s linear infinite; /* تفرغ فقط لتأثير الجليتش النيون الفخم */
+}
+
+/* ==========================================
+   5. تأثير الـ Glitch اللوني المزدوج (بينك + بنفسجي)
+   ========================================== */
+.loading-text::before,
+.loading-text::after,
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen; 
+}
+
+/* الطبقة البنفسجية الخلفية */
+.loading-text::before, .glitch-text::before {
+    animation: clipAnim1 0.4s linear infinite;
+    color: #9B00FE;
+    z-index: -1;
+}
+
+/* الطبقة البينك الخلفية */
+.loading-text::after, .glitch-text::after {
+    animation: clipAnim2 0.4s linear infinite;
+    color: #FF017F;
+    z-index: -2;
+}
+
+/* ==========================================
+   6. الـ Keyframes لجميع التحريكات
+   ========================================== */
+
+/* أنيميشن الكتابة: يكتب حرف حرف، يثبت، ثم يمسح ويعيد */
+@keyframes typing {
+    0%, 10% { width: 0; }
+    50%, 80% { width: 100%; } 
+    90%, 100% { width: 0; } 
+}
+
+/* أنيميشن وميض مؤشر الكتابة */
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: #FF017F; }
+}
+
+/* أنيميشن اهتزاز ألوان الجليتش */
+@keyframes textGlitch {
+    0%, 100% { text-shadow: 0.05em 0 0 #FF017F, -0.05em -0.025em 0 #9B00FE; }
+    25% { text-shadow: -0.05em -0.025em 0 #FF017F, 0.025em 0.05em 0 #9B00FE; }
+    50% { text-shadow: 0.025em 0.05em 0 #FF017F, 0.05em 0 0 #9B00FE; }
+    75% { text-shadow: -0.025em -0.05em 0 #FF017F, -0.05em 0 0 #9B00FE; }
+}
+
+/* تقطيع الجليتش (الطبقة البنفسجية) */
+@keyframes clipAnim1 {
+    0% { clip: rect(15px, 9999px, 30px, 0); }
+    50% { clip: rect(45px, 9999px, 10px, 0); }
+    100% { clip: rect(20px, 9999px, 55px, 0); }
+}
+
+/* تقطيع الجليتش (الطبقة البينك) */
+@keyframes clipAnim2 {
+    0% { clip: rect(50px, 9999px, 20px, 0); }
+    50% { clip: rect(5px, 9999px, 40px, 0); }
+    100% { clip: rect(35px, 9999px, 15px, 0); }
+}

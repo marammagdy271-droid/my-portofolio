@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maram M. | ui&ux Designs</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Knewave&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="uiux.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+</head>
+<body>
+
+    <nav class="main-navbar">
+        <div class="nav-links">
+            <a href="index.html#home" class="nav-item">Home</a>
+            <a href="index.html#about" class="nav-item">About</a>
+        </div>
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="Logo" style="height: 40px;"> <span class="brand-name">MARAM M</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#projects-section" class="nav-item">Project</a>
+            <a href="#" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
+    <section class="branding-hero">
+        <div class="branding-hero-content">
+            <h1 class="branding-main-title">
+                <span class="write-text part-1">ui&ux</span><br>
+                <span class="write-text part-2">designs</span>
+            </h1>
+            
+            <div class="drawn-line-container">
+                <svg viewBox="0 0 300 30" class="animated-line">
+                    <path d="M5,25 Q150,5 295,25" fill="none" stroke="#F22C70" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <a href="index.html#contact" class="splatter-action brand-splatter" style="text-decoration: none; cursor: pointer;">
+                <img src="images/spot pink.png" alt="Splatter">
+                <div class="splatter-text">Let's create</div>
+            </a>
+        </div>
+
+        <div class="branding-character-box">
+            <img src="images/maram.png" alt="Maram Character" class="brand-char slide-in-char"> 
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>UI UX <img src="images/spot pink.png" class="marquee-spot"></span>
+                    <span>MOTION <img src="images/spot pink.png" class="marquee-spot"></span>
+                    <span>BRANDING <img src="images/spot pink.png" class="marquee-spot"></span>
+                    <span>TYPOGRAPHY <img src="images/spot pink.png" class="marquee-spot"></span>
+                    <span>CREATIVE DIRECTION <img src="images/spot pink.png" class="marquee-spot"></span>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="ui-ux-profile" id="ui-ux-profile">
+        <div id="vanta-background"></div>
+
+        <div class="content-container">
+            <div class="spot-wrapper">
+                <img src="images/spot pink.png" alt="Splatter" class="spot-img">
+                <div class="text-container">
+                    <p class="type-line line-1">I design experiences</p>
+                    <p class="type-line line-2">that connect</p>
+                    <p class="type-line line-3">and inspire</p>
+                </div>
+            </div>
+
+            <img src="images/maram-character.png" alt="Maram" class="section-char">
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div id="vanta-background-projects"></div>
+
+        <div class="projects-header">
+            <h2>Projects</h2>
+        </div>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="images/tv.png" alt="Project">
+                <a href="ر" class="see-project-btn">See Project</a>
+            </div>
+            <div class="project-card">
+                <img src="images/fixora web.png" alt="Project">
+                <a href="https://www.behance.net/gallery/248645967/fixora-website?platform=direct" class="see-project-btn">See Project</a>
+            </div>
+            <div class="project-card">
+                <img src="images/fixora app.png" alt="Project">
+                <a href="https://www.behance.net/gallery/248643941/Fixora?platform=direct" class="see-project-btn">See Project</a>
+            </div>
+            <div class="project-card">
+                <img src="images/sea.png" alt="Project">
+                <a href="https://www.behance.net/marammagdy4" class="see-project-btn">See Project</a>
+            </div>
+            <div class="project-card">
+                <img src="images/low.png" alt="Project">
+                <a href="https://www.behance.net/marammagdy4" class="see-project-btn">See Project</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 1. تشغيل خلفية Vanta للسيكشن الأول
+        VANTA.NET({
+          el: "#vanta-background",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0xff017f, 
+          backgroundColor: 0x0a050f,
+          points: 12.00,
+          maxDistance: 22.00,
+          spacing: 17.00
+        });
+
+        // 2. تشغيل خلفية Vanta لسيكشن المشاريع
+        VANTA.NET({
+          el: "#vanta-background-projects",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0xff017f,
+          backgroundColor: 0x0a050f,
+          points: 10.00,
+          maxDistance: 20.00,
+          spacing: 15.00
+        });
+
+        // 3. كود الحركة (Animation) للكروت
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".project-card", {
+            scrollTrigger: {
+                trigger: ".projects-container",
+                start: "top 80%", // تبدأ الحركة عندما يصل السيكشن لـ 80% من الشاشة
+            },
+            y: 50,           // تحرك من الأسفل للأعلى
+            opacity: 0,      // تبدأ شفافة
+            duration: 0.8,
+            stagger: 0.2,    // تأخير بين كل كارت والثاني
+            ease: "power2.out"
+        });
+    </script>
+
+    <!-- Marquee Section -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-items">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Fi.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ps.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+            </div>
+            <div class="marquee-items">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Fi.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Fi.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer-section">
+    <div class="footer-character">
+        <img src="images/maram-footer.png" alt="Maram sitting">
+    </div>
+
+    <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About me</a>
+    
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Work</a>
+        <div class="dropdown-content">
+            <a href="photography.html">Photography</a>
+            <a href="branding.html">Branding</a>
+            <a href="uiux.html">UI/UX</a>
+        </div>
+    </div>
+    
+    <a href="index.html#contact">Contact</a>
+</div>
+    
+
+    <div class="contact-text">
+        <h2>Get an Idea? let's talk</h2>
+    </div>
+
+    <div class="social-media">
+        <a href="https://www.behance.net/marammagdy4"><img src="images/Behance.png" alt="Behance"></a>
+        <a href="#"><img src="images/Facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/in/maram-magdy-747948291"><img src="images/IN.png" alt="LinkedIn"></a>
+        <a href="#"><img src="images/insta.png" alt="Instagram"></a>
+    </div>
+    
+
+    <div class="footer-line">
+        <img src="images/Separator.png" alt="Line">
+    </div>
+</footer>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maram M. | Branding Designs</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Knewave&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="branding.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="main-navbar">
+        <div class="nav-links">
+            <a href="index.html#home" class="nav-item">Home</a>
+            <a href="index.html#about" class="nav-item">About</a>
+        </div>
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="Logo" style="height: 40px;"> <span class="brand-name">MARAM M</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#projects-section" class="nav-item">Project</a>
+            <a href="#" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="branding-hero">
+        <div class="branding-hero-content">
+            <h1 class="branding-main-title">
+                <span class="write-text part-1">Branding</span><br>
+                <span class="write-text part-2">designs</span>
+            </h1>
+            
+            <div class="drawn-line-container">
+                <svg viewBox="0 0 300 30" class="animated-line">
+                    <path d="M5,25 Q150,5 295,25" fill="none" stroke="#FF017F" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <!-- التعديل هنا: أضفنا وسم <a> حول الـ splatter -->
+        <a href="index.html#contact" class="splatter-action brand-splatter" style="text-decoration: none; cursor: pointer;">
+            <img src="images/spot pink.png" alt="Splatter">
+            <div class="splatter-text">Let's create</div>
+        </a>
+    </div>
+
+
+        <div class="branding-character-box">
+            <img src="images/maram.png" alt="Maram Character" class="brand-char slide-in-char"> 
+        </div>
+    </section>
+
+    <!-- Projects Cards Section -->
+    <section class="projects-section" id="project">
+        <div class="projects-header"><h2>Projects</h2></div>
+        
+        <div class="cards-container" id="cards-wrapper">
+            <div class="project-card" data-target="#brand-identity"><img src="images/card1.png"></div>
+            <div class="project-card" data-target="#poster"><img src="images/card2.png"></div>
+            <div class="project-card" data-target="#logos"><img src="images/card3.png"></div>
+            <div class="project-card" data-target="#flyer"><img src="images/card4.png"></div>
+        </div>
+
+        <a href="#" id="main-see-project" class="see-project-btn">See Project</a>
+    </section>
+
+    <!-- Marquee Section -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-items">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ps.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ps.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+            </div>
+            <div class="marquee-items">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ps.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ai.png" alt="Illustrator" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/ps.png" alt="Photoshop" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+                <img src="images/Ae.png" alt="After Effects" class="software-icon">
+                <img src="images/pink-splat.png" alt="Splat" class="splat-icon">
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Identity Section (Rawnaq) -->
+    <section class="brand-identity-section" id="brand-identity">
+        <div class="top-tab">Project</div>
+
+        <div class="brand-image-container">
+            <img src="images/rawnaq.JPEG" alt="Rawnaq Project">
+            <div class="project-overlay">
+                <p>Stay tuned! Project details coming soon on Behance</p>
+            </div>
+        </div>
+        
+        <!-- زرار See Project القديم -->
+        <a href="error.html" class="brand-btn">See Project</a>
+    </section>
+
+    <!-- Brochure Section (Layout + Gray Box) -->
+    <section class="brand-identity-section" id="brand-identity-brochure">
+        <div class="top-tab">Brochure & Invitation</div>
+
+        <div class="brochure-container">
+            <!-- الصف الأول (صورتين) -->
+            <div class="row-top">
+                <div class="img-wrapper">
+                    <img src="images/front mocup.png" alt="Front">
+                    <div class="project-overlay"><p>Stay tuned! Details soon on Behance</p></div>
+                </div>
+                <div class="img-wrapper">
+                    <img src="images/Back_mocup.png" alt="Back">
+                    <div class="project-overlay"><p>Stay tuned! Details soon on Behance</p></div>
+                </div>
+            </div>
+
+            <!-- الصف الثاني (3 صور) -->
+            <div class="row-bottom">
+                <div class="img-wrapper side-cover">
+                    <img src="images/Front_Cover.png" alt="Cover">
+                    <div class="project-overlay"><p>Stay tuned! Details soon on Behance</p></div>
+                </div>
+                <div class="img-wrapper middle-bag">
+                    <img src="images/invi.front.png" alt="Invi Front">
+                    <div class="project-overlay"><p>Stay tuned! Details soon on Behance</p></div>
+                </div>
+                <div class="img-wrapper right-card">
+                    <img src="images/invi back.png" alt="Invi Back">
+                    <div class="project-overlay"><p>Stay tuned! Details soon on Behance</p></div>
+                </div>
+            </div>
+
+            <!-- الصف الثالث (المربع الرمادي) -->
+            <div class="row-third">
+                <div class="img-wrapper gray-box">
+                    <div class="project-overlay"><p>Stay tuned! Details soon on Behance</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- زرار See Project الجديد المُضاف لسيكشن Brochure -->
+        <a href="error.html" class="brand-btn">See Project</a>
+
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // أنيميشن ظهور الكروت
+        window.addEventListener('load', () => {
+            gsap.set(".project-card", { scale: 0, opacity: 0 });
+            gsap.to(".project-card", { scale: 1, opacity: 1, duration: 1.2, ease: "back.out(1.7)", stagger: 0.3 });
+        });
+
+        // منطق اختيار الكارت والربط
+        let selectedTarget = null;
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.project-card').forEach(c => c.style.border = "none");
+                card.style.border = "4px solid #9B00FE";
+                card.style.borderRadius = "20px";
+                selectedTarget = card.getAttribute('data-target');
+            });
+        });
+
+        document.getElementById('main-see-project').addEventListener('click', (e) => {
+            if (selectedTarget) {
+                document.getElementById('main-see-project').setAttribute('href', selectedTarget);
+            } else {
+                e.preventDefault();
+                alert("Please select a project first!");
+            }
+        });
+
+        // تفعيل الخلفيات الـ 3D (مع تكبير الخلفية عبر scale: 1.60)
+        window.addEventListener('DOMContentLoaded', () => {
+            VANTA.NET({
+                el: "#brand-identity", 
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.60, // تكبير الخلفية
+                scaleMobile: 1.00,
+                color: 0xff017f,
+                backgroundColor: 0x0a050f,
+                points: 12.00,
+                maxDistance: 25.00,
+                spacing: 18.00
+            });
+            
+           
+            });
+        
+    </script>
+<<section class="flyer-section" id="flyer">
+    <div class="flyer-container">
+        <div class="top-tab">Flyer Die cut</div>
+        
+        <img src="images/ikea flyer.jpg" alt="IKEA Flyer" style="width: 400px; border-radius: 15px;">
+        
+        <div class="top-tab">Flyer</div>
+        
+        <div class="flyer-pair">
+            <img src="images/flyer ff-01.png" alt="Flyer Front" style="width: 300px; border-radius: 15px;">
+            <img src="images/flyer back edit.png" alt="Flyer Back" style="width: 300px; border-radius: 15px;">
+        </div>
+        
+        <a href="error.html" class="brand-btn" style="margin-top: 40px;">See project</a>
+    </div>
+</section>
+<script>
+    // تفعيل الخلفيات الـ 3D
+    window.addEventListener('DOMContentLoaded', () => {
+        // للخلفيات الأخرى
+        VANTA.NET({ el: "#brand-identity", mouseControls: true, touchControls: true, color: 0xff017f, backgroundColor: 0x0a050f, scale: 1.60 });
+        VANTA.NET({ el: "#brand-identity-brochure", mouseControls: true, touchControls: true, color: 0xff017f, backgroundColor: 0x0a050f, scale: 1.60 });
+        
+        // تفعيل الخلفية لسيكشن الفلاير (هذا هو السطر المهم)
+        VANTA.NET({
+            el: "#flyer", 
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.60,
+            scaleMobile: 1.00,
+            color: 0xff017f,
+            backgroundColor: 0x000000,
+            points: 12.00,
+            maxDistance: 25.00,
+            spacing: 18.00
+        });
+    });
+</script>
+<section class="poster-section" id="poster">
+    <div class="top-tab">Poster</div>
+
+    <div class="marquee-wrapper">
+        <div class="poster-track">
+            ...
+        </div>
+    </div>
+
+
+        <div class="marquee-wrapper">
+            <div class="poster-track">
+                <div class="poster-card"><img src="images/KitKat act.jpg" alt="Poster"></div>
+                <div class="poster-card"><img src="images/coffe.jpg" alt="Poster"></div>
+                <div class="poster-card"><img src="images/WOMEN.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/ikea.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/4vxo16.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/poster 4e.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/poster 3.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/gray2.png" alt="Poster"></div>
+                
+                <div class="poster-card"><img src="images/KitKat act.jpg" alt="Poster"></div>
+                <div class="poster-card"><img src="images/coffe.jpg" alt="Poster"></div>
+                <div class="poster-card"><img src="images/WOMEN.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/ikea.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/4vc016.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/poster 4e.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/poster 3.png" alt="Poster"></div>
+                <div class="poster-card"><img src="images/gray2.png" alt="Poster"></div>
+            </div>
+        </div>
+
+        <a href="https://www.behance.net/marammagdy4" class="brand-btn" target="_blank">See project</a>
+    </div>
+</section>
+
+<section class="logos-section" id="logos">
+    <div class="top-tab">Logos</div>
+
+    <div class="marquee-wrapper">
+        <div class="logo-track-left">
+            <div class="logo-card"><img src="images/1.jpg"></div>
+            <div class="logo-card"><img src="images/2.jpg"></div>
+            <div class="logo-card"><img src="images/3.jpg"></div>
+            <div class="logo-card"><img src="images/4.jpg"></div>
+            <div class="logo-card"><img src="images/5.jpg"></div>
+            <div class="logo-card"><img src="images/6.png"></div>
+            <div class="logo-card"><img src="images/1.jpg"></div>
+            <div class="logo-card"><img src="images/2.jpg"></div>
+            <div class="logo-card"><img src="images/3.jpg"></div>
+            <div class="logo-card"><img src="images/4.jpg"></div>
+            <div class="logo-card"><img src="images/5.jpg"></div>
+            <div class="logo-card"><img src="images/6.png"></div>
+        </div>
+    </div>
+
+    <div class="marquee-wrapper">
+        <div class="logo-track-right">
+            <div class="logo-card"><img src="images/7.jpg"></div>
+            <div class="logo-card"><img src="images/8.jpg"></div>
+            <div class="logo-card"><img src="images/9.jpg"></div>
+            <div class="logo-card"><img src="images/10.png"></div>
+            <div class="logo-card"><img src="images/12.png"></div>
+            <div class="logo-card"><img src="images/13.png"></div>
+            <div class="logo-card"><img src="images/7.jpg"></div>
+            <div class="logo-card"><img src="images/8.jpg"></div>
+            <div class="logo-card"><img src="images/9.jpg"></div>
+            <div class="logo-card"><img src="images/10.png"></div>
+            <div class="logo-card"><img src="images/12.png"></div>
+            <div class="logo-card"><img src="images/13.png"></div>
+        </div>
+    </div>
+</section>
+</body>
+<footer class="footer-section">
+    <div class="footer-character">
+        <img src="images/maram-footer.png" alt="Maram sitting">
+    </div>
+
+    <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About me</a>
+    
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Work</a>
+        <div class="dropdown-content">
+            <a href="photography.html">Photography</a>
+            <a href="branding.html">Branding</a>
+            <a href="uiux.html">UI/UX</a>
+        </div>
+    </div>
+    
+    <a href="index.html#contact">Contact</a>
+</div>
+    
+
+    <div class="contact-text">
+        <h2>Get an Idea? let's talk</h2>
+    </div>
+
+    <div class="social-media">
+        <a href="https://www.behance.net/marammagdy4"><img src="images/Behance.png" alt="Behance"></a>
+        <a href="#"><img src="images/Facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/in/maram-magdy-747948291"><img src="images/IN.png" alt="LinkedIn"></a>
+        <a href="#"><img src="images/insta.png" alt="Instagram"></a>
+    </div>
+    
+
+    <div class="footer-line">
+        <img src="images/Separator.png" alt="Line">
+    </div>
+</footer>
+</html>

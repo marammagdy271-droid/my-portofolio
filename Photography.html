@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maram M. | Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Knewave&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <link rel="stylesheet" href="photography.css">
+</head>
+<body>
+
+    <div id="loader-overlay">
+        <div class="loader-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <nav class="main-navbar">
+        <div class="nav-links">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#about" class="nav-item">About</a>
+        </div>
+        <div class="nav-brand">
+            <img src="images/logo.png" alt="Logo" style="height: 35px;"> <span class="brand-name">MARAM M</span>
+        </div>
+        <div class="nav-links">
+            <a href="#projects" class="nav-item">Project</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="photography-hero">
+        <div class="hero-content">
+            <h1 class="main-title"><span class="write-text">Photography</span></h1>
+            <div class="drawn-line-container">
+                <svg viewBox="0 0 300 30" class="animated-line">
+                    <path d="M5,25 Q150,5 295,25" fill="none" stroke="#FF017F" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <a href="#projects" class="brand-splatter" style="text-decoration: none;">
+                <img src="images/spot pink.png" alt="Splatter">
+                <div class="splatter-text">Let's shoot</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="projects" class="gallery-section reveal-on-scroll">
+        <img src="images/star.png" alt="Star" class="deco-star">
+        <img src="images/film.png" alt="Film Roll" class="deco-film1">
+        <img src="images/film2.png" alt="Film Camera" class="deco-film2">
+
+        <div class="gallery-grid">
+            <a href="#film-section" class="trigger-loader">
+                <img src="images/shsh.png" alt="Project 1" class="gallery-img">
+            </a>
+            <img src="images/egypt.png" alt="Project 2" class="gallery-img">
+            <img src="images/matroh.png" alt="Project 3" class="gallery-img">
+            <img src="images/old.png" alt="Project 4" class="gallery-img">
+        </div>
+
+        <a href="#film-section" class="btn-purple trigger-loader">See Project</a>
+    </section>
+
+    <section id="film-section" class="video-section reveal-on-scroll">
+        <div class="video-container">
+            <video id="film-video" controls preload="metadata">
+                <source src="images/film.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section> 
+    <section id="extra-gallery" class="gallery-section reveal-on-scroll">
+    <div class="gallery-grid">
+        <img src="images/sea1.png" alt="sea 1" class="gallery-img">
+        <img src="images/sea2.png" alt="sea 2" class="gallery-img">
+        <img src="images/sea3.png" alt="sea 3" class="gallery-img">
+        <img src="images/sea4.png" alt="sea 4" class="gallery-img">
+    </div>
+</section>
+
+    <script>
+        // منطق التحميل
+        const loader = document.getElementById('loader-overlay');
+        const triggers = document.querySelectorAll('.trigger-loader');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                loader.style.display = 'flex';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.querySelector('#film-section').scrollIntoView({ behavior: 'smooth' });
+                }, 2000); 
+            });
+        });
+
+        // تأثير الظهور
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+        
+        // الخلفية المتعرجة
+        VANTA.WAVES({
+            el: "#film-section",
+            mouseControls: true, touchControls: true, gyroControls: false,
+            minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
+            color: 0x0a050f, shininess: 40.00, waveHeight: 20.00, waveSpeed: 0.80, zoom: 0.9
+        });
+    </script>
+</body>
+<footer class="footer-section">
+    <div class="footer-character">
+        <img src="images/maram-footer.png" alt="Maram sitting">
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html" class="trigger-loader">Home</a>
+        <a href="about.html" class="trigger-loader">About me</a>
+        
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Work</a>
+            <div class="dropdown-content">
+                <a href="photography.html" class="trigger-loader">Photography</a>
+                <a href="branding.html" class="trigger-loader">Branding</a>
+                <a href="uiux.html" class="trigger-loader">UI/UX</a>
+            </div>
+        </div>
+        
+        <a href="index.html#contact" class="trigger-loader">Contact</a>
+    </div>
+
+    <div class="contact-text">
+        <h2>Get an Idea? let's talk</h2>
+    </div>
+
+    <div class="social-media">
+        <a href="https://www.behance.net/marammagdy4"><img src="images/Behance.png" alt="Behance"></a>
+        <a href="#"><img src="images/Facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/in/maram-magdy-747948291"><img src="images/IN.png" alt="LinkedIn"></a>
+        <a href="#"><img src="images/insta.png" alt="Instagram"></a>
+    </div>
+    
+    <div class="footer-line">
+        <img src="images/Separator.png" alt="Line">
+    </div>
+</footer>
+</html>
